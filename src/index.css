@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* Base Styles */
+*{
+  background-color: #165f28;
+  margin: 0; 
+  font-family: "Stardos Stencil";
+  font-weight: bold;
+  color: black;
+}
+
+/* HomePage Styles */
+.homePage {
+  top: 35%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  text-align: center;
+  font-size: 53px;
+}
+
+.homePage h1 {
+  padding: 50px;
+}
+
+.homePage a {
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.homePage a:hover {
+  padding:12px;
+}
+
+/* HowToPlayPage Styles */
+.howToPlayPage h1 {
+  top: 10%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  text-align: center;
+  font-size: 48px;
+}
+
+.howToPlayPage div { 
+  margin-top: 10%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.howToPlayPage p {
+  font-size: 30px;
+}
+
+/* BackButton Styles */
+.backButton a {
+  top: 10%;
+  position: absolute;
+  margin-left: 15%;
+  border: 2px solid black;
+  border-radius: 10px;
+  font-size: 35px;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px;
+}
+
+.backButton a:hover {
+  padding: 12px;
+}
+
+/* PlayPage Styles */
+.backgroundImagePage {
+  position: relative;
+  z-index: 0;
+}
+
+.main-container {
+  background-image: url("./images/bj_playing_background.jpg");
+  height: 100vh;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  z-index: 0;
+}
+
+/* CardDealing Styles */
+.CardBeingDealt {
+  width: 100px;
+  z-index: 1;
+  position: absolute;
+  top: 20%; 
+  left: 30%;
+  object-fit: fill;
+}
