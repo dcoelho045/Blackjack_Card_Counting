@@ -21,6 +21,8 @@ const PlayPage = () => {
                 <CardDealing/>
                 <BackButton/>
             </div>
+
+            <p> This is a test</p>
         </>
     );
 }
