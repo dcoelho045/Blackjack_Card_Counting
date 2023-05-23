@@ -1,28 +1,39 @@
+import {useState} from 'react'
 import dealerCard1 from "../images/cards/AS.png"
 import dealerCard2 from "../images/cards/AH.png"
 import playerCard1 from "../images/cards/2C.png"
 import playerCard2 from "../images/cards/KD.png"
 
 const CardDealing = () => {
+    const [showImages, setShowImages] = useState(false);
+    
+    const handleDealButtonClick = () => {
+        setShowImages(true);
+    }
+    
     const baseImageAddressDealer1 = "../images/cards/##.png";
-
+    
     return ( 
         <>
             <div className="startButton">
-                <button>Deal Cards</button>
+                <button onClick={handleDealButtonClick}>Deal Cards</button>
             </div>
-            <div className="dealtCardDealer1" style={{top: "17%", left: "42.5%"}}>
-                <img style={{ width: 200, height: 280 }}src={dealerCard1} alt="dealerCard1"/>
-            </div>
-            <div className="dealtCardDealer2" style={{top: "22%", left: "45.5%"}}>
-                <img style={{ width: 200, height: 280 }}src={dealerCard2} alt="dealerCard2"/>
-            </div>
-            <div className="dealtPlayerCard1" style={{top: "50%", left: "42.5%"}}>
-                <img style={{ width: 200, height: 280 }}src={playerCard1} alt="playerCard1"/>
-            </div>
-            <div className="dealtPlayerCard2" style={{top: "55%", left: "45.5%"}}>
-                <img style={{ width: 200, height: 280 }}src={playerCard2} alt="playerCard2"/>
-            </div>
+            {showImages && (
+                <>
+                    <div className="dealtCardDealer1" style={{top: "17%", left: "42.5%"}}>
+                        <img style={{ width: 200, height: 280 }}src={dealerCard1} alt="dealerCard1"/>
+                    </div>
+                    <div className="dealtCardDealer2" style={{top: "22%", left: "45.5%"}}>
+                        <img style={{ width: 200, height: 280 }}src={dealerCard2} alt="dealerCard2"/>
+                    </div>
+                    <div className="dealtPlayerCard1" style={{top: "50%", left: "42.5%"}}>
+                        <img style={{ width: 200, height: 280 }}src={playerCard1} alt="playerCard1"/>
+                    </div>
+                    <div className="dealtPlayerCard2" style={{top: "55%", left: "45.5%"}}>
+                        <img style={{ width: 200, height: 280 }}src={playerCard2} alt="playerCard2"/>
+                    </div>
+                </>
+            )}
         </>
     );
 }
