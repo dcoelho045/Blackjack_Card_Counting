@@ -9,6 +9,10 @@
   color: black;
 }
 
+*::-webkit-scrollbar {
+  display: none;
+}
+
 /* HomePage Styles */
 .homePage {
   top: 35%;
@@ -90,11 +94,34 @@
 }
 
 /* CardDealing Styles */
-.CardBeingDealt {
-  width: 100px;
+.dealtCardDealer1, .dealtCardDealer2, .dealtPlayerCard1, .dealtPlayerCard2{
   z-index: 1;
   position: absolute;
-  top: 20%; 
-  left: 30%;
   object-fit: fill;
+  
+}
+
+.startButton {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  right: 3%;
+  top: 15%;
+  z-index: 2;
+
+}
+
+.startButton button {
+  color: maroon;
+  border: 4px solid black;
+  border-radius: 10px;
+  padding: 4px;
+  font-size: 80px;
+}
+
+/* .startButton button:hover{
+  padding: 8px;
+} */
+
+.startButton button:active {
+  padding: 8px;
 }
