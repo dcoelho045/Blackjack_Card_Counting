@@ -52,6 +52,21 @@ import JD from "../images/cards/10D.png"
 import QD from "../images/cards/11D.png"
 import KD from "../images/cards/12D.png"
 
+let runningCountValue = 0; 
+
+const incrementRunningCount = () => {
+    runningCountValue++;
+};
+  
+const decrementRunningCount = () => {
+    runningCountValue--;
+};
+  
+const getRunningCountValue = () => {
+    return runningCountValue;
+};
+
+
 const CardDealing = () => {
     const [showImages, setShowImages] = useState(false);
     const [randomDeal1, setRandomDeal1] = useState(0);
@@ -59,22 +74,40 @@ const CardDealing = () => {
     const [randomDeal3, setRandomDeal3] = useState(0);
     const [randomDeal4, setRandomDeal4] = useState(0);
 
-    const playingCards = [
-        oneS, twoS, threeS, fourS, fiveS, sixS, sevenS, eightS, nineS, tenS, JS, QS, KS, 
-        oneC, twoC, threeC, fourC, fiveC, sixC, sevenC, eightC, nineC, tenC, JC, QC, KC, 
-        oneH, twoH, threeH, fourH, fiveH, sixH, sevenH, eightH, nineH, tenH, JH, QH, KH,
-        oneD, twoD, threeD, fourD, fiveD, sixD, sevenD, eightD, nineD, tenD, JD, QD, KD];
+    // 2 to 6: +1   7 to 9: 0   10 to Ace: -1
+    // 0-23: +1   24-35: 0  36-51: -1
+    const playingCards = [oneS, oneC,  oneH, oneD, twoS, twoC, twoH, twoD, threeS, threeC, threeH, threeD, fourS, fourC, fourH, fourD, // 15
+        fiveS, fiveC, fiveH, fiveD, sixS, sixC, sixH, sixD, sevenS, sevenC, sevenH, sevenD, eightS, eightC, eightH, eightD, nineS, nineC, // 33
+        nineH, nineD, tenS, tenC, tenH, tenD, JS, JC, JH, JD, QS, QC, QH, QD, KS, KC, KH, KD]
+
+    const adder = (rc) => {
+        if(playingCards.indexOf(rc) <= 23){
+            incrementRunningCount(); 
+        }
+        else if(playingCards.indexOf(rc) >= 36){
+            decrementRunningCount();
+        }
+        console.log(getRunningCountValue());
+    }
+
 
     const handleDealButtonClick = () => {
         const randomNum1 = Math.floor(Math.random() * 52);
+        adder(playingCards[randomNum1]);
         setRandomDeal1(randomNum1);
+        
         const randomNum2 = Math.floor(Math.random() * 52);
+        adder(playingCards[randomNum2]);
         setRandomDeal2(randomNum2);
+        
         const randomNum3 = Math.floor(Math.random() * 52);
+        adder(playingCards[randomNum3]);
         setRandomDeal3(randomNum3);
+        
         const randomNum4 = Math.floor(Math.random() * 52);
+        adder(playingCards[randomNum4]);
         setRandomDeal4(randomNum4);
-
+        
         setShowImages(true);
     }
 
@@ -97,10 +130,13 @@ const CardDealing = () => {
                     <div className="dealtPlayerCard2" style={{top: "55%", left: "45.5%"}}>
                         <img style={{ width: 200, height: 280 }}src={playingCards[randomDeal4]} alt="playerCard2"/>
                     </div>
+                    <div>
+                        <p>{runningCountValue}</p>
+                    </div>
                 </>
             )}
         </>
     );
 }
  
-export default CardDealing;
+export {runningCountValue, CardDealing};

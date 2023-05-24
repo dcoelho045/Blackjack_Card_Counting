@@ -1,12 +1,12 @@
 import BackButton from "./BackButton";
-import CardDealing from "./CardDealing";
+import RunningCount from "./RunningCount";
 
 const PlayPage = () => {
     return ( 
         <>
             <div className="main-container">
-                <CardDealing/>
                 <BackButton/>
+                <RunningCount/>
             </div>
         </>
     );
