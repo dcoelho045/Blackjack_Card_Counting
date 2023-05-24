@@ -98,7 +98,6 @@
   z-index: 1;
   position: absolute;
   object-fit: fill;
-  
 }
 
 .startButton {
@@ -117,10 +116,6 @@
   padding: 4px;
   font-size: 80px;
 }
-
-/* .startButton button:hover{
-  padding: 8px;
-} */
 
 .startButton button:active {
   padding: 8px;
