@@ -21,11 +21,12 @@
   transform: translate(-50%, -50%);
   align-items: center;
   text-align: center;
-  font-size: 53px;
+  /* font-size: 53px; */
+  font-size: 300%
 }
 
 .homePage h1 {
-  padding: 50px;
+  padding: 5%;
 }
 
 .homePage a {
@@ -66,7 +67,7 @@
 /* BackButton Styles */
 .backButton a {
   color: maroon;
-  top: 10%;
+  top: 8%;
   position: absolute;
   margin-left: 15%;
   border: 2px solid black;
@@ -116,7 +117,7 @@
   border: 4px solid black;
   border-radius: 10px;
   padding: 4px;
-  font-size: 80px;
+  font-size: 500%;
 }
 
 .startButton button:active {
@@ -139,6 +140,7 @@
 .runningCountInput label {
   text-align: center;
   display: block;
+  z-index: 4;
 }
 
 .runningCountInput input {
