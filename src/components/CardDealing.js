@@ -43,14 +43,14 @@ import twoD from "../images/cards/2D.png"
 import threeD from "../images/cards/3D.png"
 import fourD from "../images/cards/4D.png"
 import fiveD from "../images/cards/5D.png"
-import sixD from "../images/cards/13D.png"
-import sevenD from "../images/cards/6D.png"
-import eightD from "../images/cards/7D.png"
-import nineD from "../images/cards/8D.png"
-import tenD from "../images/cards/9D.png"
-import JD from "../images/cards/10D.png"
-import QD from "../images/cards/11D.png"
-import KD from "../images/cards/12D.png"
+import sixD from "../images/cards/6D.png"
+import sevenD from "../images/cards/7D.png"
+import eightD from "../images/cards/8D.png"
+import nineD from "../images/cards/9D.png"
+import tenD from "../images/cards/10D.png"
+import JD from "../images/cards/11D.png"
+import QD from "../images/cards/12D.png"
+import KD from "../images/cards/13D.png"
 
 let runningCountValue = 0; 
 
@@ -76,18 +76,22 @@ const CardDealing = () => {
 
     // 2 to 6: +1   7 to 9: 0   10 to Ace: -1
     // 0-23: +1   24-35: 0  36-51: -1
-    const playingCards = [oneS, oneC,  oneH, oneD, twoS, twoC, twoH, twoD, threeS, threeC, threeH, threeD, fourS, fourC, fourH, fourD, // 15
-        fiveS, fiveC, fiveH, fiveD, sixS, sixC, sixH, sixD, sevenS, sevenC, sevenH, sevenD, eightS, eightC, eightH, eightD, nineS, nineC, // 33
-        nineH, nineD, tenS, tenC, tenH, tenD, JS, JC, JH, JD, QS, QC, QH, QD, KS, KC, KH, KD]
+    const playingCards = [
+        twoS, twoC, twoH, twoD, threeS, threeC, threeH, // 6
+        threeD, fourS, fourC, fourH, fourD, fiveS, fiveC, fiveH, fiveD, // 15
+        sixS, sixC, sixH, sixD, sevenS, sevenC, // 21
+        sevenH, sevenD, eightS, eightC, eightH, eightD, nineS, nineC, // 29
+        nineH, nineD, tenS, tenC, tenH, tenD, JS, JC, JH, JD, // 39
+        QS, QC, QH, QD, KS, KC, KH, KD, oneS, oneC, oneH, oneD, ]; // 51
 
     const adder = (rc) => {
-        if(playingCards.indexOf(rc) <= 23){
+        if(playingCards.indexOf(rc) <= 19){
             incrementRunningCount(); 
         }
-        else if(playingCards.indexOf(rc) >= 36){
+        else if(playingCards.indexOf(rc) >= 32){
             decrementRunningCount();
         }
-        console.log(getRunningCountValue());
+        console.log("run cnt: " + getRunningCountValue());
     }
 
 
@@ -129,9 +133,6 @@ const CardDealing = () => {
                     </div>
                     <div className="dealtPlayerCard2" style={{top: "55%", left: "45.5%"}}>
                         <img style={{ width: 200, height: 280 }}src={playingCards[randomDeal4]} alt="playerCard2"/>
-                    </div>
-                    <div>
-                        <p>{runningCountValue}</p>
                     </div>
                 </>
             )}

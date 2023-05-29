@@ -1,7 +1,7 @@
 const Home = () => {
     return ( 
         <div className="homePage">
-            <h1>Blackjack Card Counting</h1>
+            <h1>Blackjack Card Counting Trainer</h1>
             <div className="playLinks">
                 <a href="/play">PLAY</a>
             </div>

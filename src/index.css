@@ -29,6 +29,7 @@
 }
 
 .homePage a {
+  color: maroon;
   border: 2px solid black;
   border-radius: 10px;
   font-size: 50px;
@@ -64,6 +65,7 @@
 
 /* BackButton Styles */
 .backButton a {
+  color: maroon;
   top: 10%;
   position: absolute;
   margin-left: 15%;
@@ -122,3 +124,36 @@
 }
 
 /* RunningCount Styles */
+.runningCountInput {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+  border: 2px solid black;
+  padding: 20px;
+  font-size: 40px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  right: 10%;
+  bottom: 30%;
+}
+.runningCountInput label {
+  text-align: center;
+  display: block;
+}
+
+.runningCountInput input {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 2px solid black;
+  box-sizing: border-box;
+  display: block;
+}
+.runningCountInput button {
+  font-size: 20px;
+  color: maroon;
+  border: 2px solid black;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
