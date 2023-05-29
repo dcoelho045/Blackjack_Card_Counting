@@ -16,8 +16,11 @@ const HowToPlayPage = () => {
                         The true count can be obtained by dividing the running count by the decks remaining. So in theory as 
                         the true count increases, the amount of 10s and Aces that will appear will increase so you should increase your bet size.
                         This trainer is designed to help you increase your speed at obtaining the correct running count.</p>
-                    <p></p>
-                    <p></p>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
                     <p>created by Daniel Coelho</p>
                 </div>
             </div>
