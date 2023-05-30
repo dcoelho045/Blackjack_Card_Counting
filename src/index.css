@@ -156,4 +156,13 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  width: 80px; /* Adjust the width as needed */
+  height: 40px; /* Adjust the height as needed */
+  box-sizing: border-box; /* Include padding and border in the specified width and height */
+}
+
+.runningCountInput button:active {
+  padding: 8px;
+  width: 90px;
+  height: 40px;
 }
